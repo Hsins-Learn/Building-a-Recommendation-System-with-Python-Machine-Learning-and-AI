@@ -1,6 +1,6 @@
-# 01 - Popularity-based Recommendation Systems
+# 01 - Popularity-Based Recommendation Systems
 
-**Popularity-based Recommendation Systems** offer a very primitive form of collaborative filtering, where items are recommended to users based on how popular those items are among other users.
+**Popularity-Based Recommendation Systems** offer a very primitive form of collaborative filtering, where items are recommended to users based on how popular those items are among other users.
 
 In this section, we are going to build a Popularity-based Recommendation Systems to recommend the places by taking a count of the number of raints that were given to eat. We assumpt that:
 
@@ -47,7 +47,7 @@ summary
 
 ## Summary
 
-The concepts of Popularity-based Recommendation Systems are:
+The concepts of Popularity-Based Recommendation Systems are:
 
 - Recommend the most popular item.
 - Depend on resource strictly.
