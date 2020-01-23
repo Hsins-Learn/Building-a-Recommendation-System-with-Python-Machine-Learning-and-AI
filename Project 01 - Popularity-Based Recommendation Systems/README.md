@@ -1,4 +1,4 @@
-# 01 - Popularity-Based Recommendation Systems
+# Project 01 - Popularity-Based Recommendation Systems
 
 **Popularity-Based Recommendation Systems** offer a very primitive form of collaborative filtering, where items are recommended to users based on how popular those items are among other users.
 

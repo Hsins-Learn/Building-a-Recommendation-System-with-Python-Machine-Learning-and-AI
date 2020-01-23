@@ -1,4 +1,4 @@
-# 02 - Correlation-Based Recommendation Systems
+# Project 02 - Correlation-Based Recommendation Systems
 
 **Correlation-Based Recommendation Systems** offer a basic form of collaborative filtering. It takes user preferences into account and recommends items based on similarties in their user view.
 
