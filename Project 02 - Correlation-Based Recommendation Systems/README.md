@@ -48,6 +48,7 @@ cuisine_data.head()
 Retreive the `id` and `name` column since we dont' need all of the attributes in the `geo_data` dataframe.
 
 ```python
+# Retreive only `id` and `name` column
 places_data = geo_data[['placeID', 'name']]
 places_data.head()
 ```
@@ -61,6 +62,7 @@ places_data.head()
 rating = pd.DataFrame(rating_data.groupby('placeID')['rating'].mean())
 rating['rating_count'] = pd.DataFrame(rating_data.groupby('placeID')['rating'].count())
 rating.sort_values('rating_count', ascending=False).head()
+
 rating.describe()
 
 # According to the data above, we know the most popular restaurant is place 135085
@@ -74,6 +76,7 @@ cuisine_data[cuisine_data['placeID']==135085]
 - Use [`pandas.pivot_table()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html) method to build a user by item utility matrix.
 
 ```python
+# create the user-item martix
 places_crosstable = pd.pivot_table(data=rating_data, values='rating', index='userID', columns='placeID')
 places_crosstable.head()
 
@@ -87,9 +90,8 @@ Tortas_ratings[Tortas_ratings>=0]
 - Use [DataFrame.corrwith()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corrwith.html) to calculate the correlations
 
 ```python
-similar_to_Tortas = places_crosstable.corrwith(Tort     as_ratings)
-
-corr_Tortas = pd.DataFrame(similar_to_Tortas, columns=['PearsonR'])
+# calculate correlations
+corr_Tortas = pd.DataFrame(places_crosstable.corrwith(Tortas_ratings), columns=['PearsonR'])
 corr_Tortas.dropna(inplace=True)
 corr_Tortas.head()
 
@@ -103,4 +105,13 @@ summary = pd.merge(places_corr_Tortas, cuisine_data,on='placeID')
 summary
 
 places_data[places_data['placeID']==135046]
+cuisine_data['Rcuisine'].describe()
 ```
+
+## Summary
+
+The concepts of Correlation-Based Recommendation Systems are:
+
+- Recommend the items that have review scores that correlates with another item that a user has already chosen.
+- Find the similar with Pearson's R Correlation Coefficient
+- Takes the data of users into account.
